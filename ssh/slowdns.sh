@@ -50,7 +50,7 @@ cd
 #install client-sldns.service
 cat > /etc/systemd/system/client-sldns.service << END
 [Unit]
-Description=Client SlowDNS By TARAP KUHING
+Description=Client SlowDNS By FARUK BROWSER
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 [Service]
@@ -68,7 +68,7 @@ cd
 #install server-sldns.service
 cat > /etc/systemd/system/server-sldns.service << END
 [Unit]
-Description=Server SlowDNS By TARAP KUHING
+Description=Server SlowDNS By FARUK BROWSER
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 [Service]

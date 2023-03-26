@@ -274,7 +274,7 @@ chmod +x slowdns
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}⇱ UPDATE ⇲                    ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}⇱ SELESAI....⇲                  ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}⇱ FINISHED....⇲                  ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 sleep 1
 cd

@@ -73,7 +73,7 @@ clear
 domain=$(cat /etc/xray/domain)
 tls="$(cat ~/log-install.txt | grep -w "Trojan WS TLS" | cut -d: -f2|sed 's/ //g')"
 ntls="$(cat ~/log-install.txt | grep -w "Trojan WS none TLS" | cut -d: -f2|sed 's/ //g')"
-user=♤TARAP-KUHING♤`</dev/urandom tr -dc X-Z-0-9 | head -c4`
+user=♤FARUK-BROWSER♤`</dev/urandom tr -dc X-Z-0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -120,7 +120,7 @@ echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp"            | tee 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} "
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"

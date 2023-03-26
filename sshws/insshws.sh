@@ -1,6 +1,6 @@
 #!/bin/bash
 # Proxy For Edukasi & Imclass
-# Mod By TARAP KUHING
+# Mod By FARUK BROWSER
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -35,7 +35,7 @@ chmod +x /usr/local/bin/ws-dropbear
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By TARAP KUHING
+Description=Python Proxy Mod By FARUK BROWSER
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
@@ -63,7 +63,7 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By TARAP KUHING
+Description=Python Proxy Mod By FARUK BROWSER
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
@@ -90,7 +90,7 @@ chmod +x /usr/local/bin/ws-stunnel
 # Installing Service
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
-Description=Python Proxy Mod By TARAP KUHING
+Description=Python Proxy Mod By FARUK BROWSER
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 

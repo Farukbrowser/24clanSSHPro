@@ -131,7 +131,7 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "jambanbkn@gmail.com" &> /dev/null
+    git config --global user.email "farukktn@gmail.com" &> /dev/null
     git config --global user.name "jambanbkn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
@@ -279,7 +279,7 @@ echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt

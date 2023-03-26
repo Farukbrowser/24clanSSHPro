@@ -391,5 +391,5 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}♧ SCRIPT ♧ ${NC}                    $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}♤ PREMIUM ♤ ${NC}                   $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}◇   BY   ◇ ${NC}                    $COLOR1 $NC"
-echo -e "$COLOR1 ${NC}             ${WH}♡ TARAP KUHING ♡ ${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}             ${WH}♡ FARUK BROWSER ♡ ${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"

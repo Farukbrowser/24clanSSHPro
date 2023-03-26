@@ -74,7 +74,7 @@ echo -e " $COLOR1 $NC"
 echo -e " $COLOR1 $NC  ${WH}[${COLOR1}00${WH}]$NC ${COLOR1}• ${WH}GO BACK$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read colormenu
@@ -91,7 +91,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM BLUE Active Successful
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 02 | 2)
@@ -106,7 +106,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM RED Active Successfull
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 03 | 3)
@@ -121,7 +121,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM YELLOW Active Successf
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 04 | 4)
@@ -136,7 +136,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM CYAN Active Successful
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 05 | 5)
@@ -151,7 +151,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM GREEN Active Successfu
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 06 | 6)
@@ -166,7 +166,7 @@ echo -e " $COLOR1 $NC ${WH}[${COLOR1}INFO${WH}] ${WH}TEAM MAGENTA Active Success
 echo -e " $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP-KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUK-BROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 ;;
 00 | 0)

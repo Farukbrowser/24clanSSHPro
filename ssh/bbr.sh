@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By TARAP KUHING
+# Mod By FARUK BROWSER
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -25,7 +25,7 @@ echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
 echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
 exit 0
 fi
-#Optimasi Speed By TARAP KUHING
+#Optimasi Speed By FARUK BROWSER
 Add_To_New_Line(){
 	if [ "$(tail -n1 $1 | wc -l)" == "0"  ];then
 		echo "" >> "$1"

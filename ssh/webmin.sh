@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By TARAP KUHING
+# Mod By FARUK BROWSER
 # ===dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
@@ -92,7 +92,7 @@ echo " http://$IP:10000"
 echo " Username : root"
 echo " Password : Your Paasword VPS"
 echo "======================="
-echo "Script By TARAP KUHING"
+echo "Script By FARUK BROWSER"
 }
 function restart () {
 echo " Restarting Webmin"
@@ -104,7 +104,7 @@ echo ""
 echo "======================="
 echo "  Done Restart Webmin  "
 echo "======================="
-echo "Script By TARAP KUHING"
+echo "Script By FARUK BROWSER"
 }
 function uninstall () {
 echo " Removing Repositori Webmin"
@@ -119,7 +119,7 @@ echo ""
 echo "========================="
 echo "  Done Uninstall Webmin  "
 echo "========================="
-echo "Script By TARAP KUHING"
+echo "Script By FARUK BROWSER"
 }
 if [[ "$cek" = "perl" ]]; then
 sts="${Info}"

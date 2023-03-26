@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By TARAP KUHING
+# Mod By FARUK BROWSER
 # ==========================================
 # Color
 RED='\033[0;31m'

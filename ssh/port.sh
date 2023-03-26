@@ -40,7 +40,7 @@ echo -e "${tyblue}|●⏩ Vless WS none TLS       : 80 ⏪               |${NC}"
 echo -e "${tyblue}|●⏩ Trojan WS none TLS      : 80 ⏪               |${NC}"
 echo -e "${tyblue}|●⏩ Shadowsocks WS none TLS : 80 ⏪               |${NC}"
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
-echo -e "${tyblue}|            ♡ SCRIPT BY TARAP KUHING              |${NC}"
+echo -e "${tyblue}|            ♡ SCRIPT BY FARUK BROWSER              |${NC}"
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
 echo -e ""
 read -p " Select menu : " opt

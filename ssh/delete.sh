@@ -110,7 +110,7 @@ clear
                done
                echo " "
                echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-               echo -e "$COLOR1 ${NC} ${COLBG1}                       ${WH}• SCRIPT by TARAP KUHING •              ${NC} $COLOR1 $NC"
+               echo -e "$COLOR1 ${NC} ${COLBG1}                       ${WH}• SCRIPT by FARUK BROWSER •              ${NC} $COLOR1 $NC"
                echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
                read -n 1 -s -r -p "Press any key to back on menu"

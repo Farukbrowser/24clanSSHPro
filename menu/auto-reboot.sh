@@ -32,7 +32,7 @@ chmod +x /usr/local/bin/reboot_otomatis
 fi
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[0;100;33m       • AUTO-REBOOT MENU BY TARAP KUHING •        \e[0m"
+echo -e "\e[0;100;33m       • AUTO-REBOOT MENU BY FARUK BROWSER •        \e[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo -e "[\e[36m•1\e[0m] Set Auto-Reboot Setiap 1 Jam"
@@ -77,7 +77,7 @@ elif test $x -eq 8; then
 if [ ! -e /root/log-reboot.txt ]; then
 	clear
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY FARUK BROWSER •        \e[0m"
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e ""
     echo "No reboot activity found"
@@ -89,7 +89,7 @@ if [ ! -e /root/log-reboot.txt ]; then
 	else
 	clear
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+    echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY FARUK BROWSER •        \e[0m"
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e ""
 	echo 'LOG REBOOT'
@@ -103,7 +103,7 @@ fi
 elif test $x -eq 9; then
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY TARAP KUHING •        \e[0m"
+echo -e "\e[0;100;33m        • AUTO-REBOOT LOG BY FARUK BROWSER •        \e[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo "" > /root/log-reboot.txt

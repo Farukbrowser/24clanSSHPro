@@ -166,7 +166,7 @@ echo -e  "               ${tyblue}┌──────────────�
 echo -e  "               ${tyblue}|              TERIMA KASIH                |${NC}"
 echo -e  "               ${tyblue}|         SUDAH MENGGUNAKAN SCRIPT         |${NC}"
 echo -e  "               ${tyblue}|                DARI SAYA                 |${NC}"
-echo -e  "               ${tyblue}|            BY TARAP KUHING               |${NC}"
+echo -e  "               ${tyblue}|            BY FARUK BROWSER               |${NC}"
 echo -e  "               ${tyblue}|         ADA PERTANYAAN CHAT SAJA         |${NC}"
 echo -e  "               ${tyblue}|        https://wa.me/085754292950        |${NC}"
 echo -e  "               ${tyblue}└──────────────────────────────────────────┘${NC}"
@@ -293,7 +293,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "━━━━━━━━━━━━━━━━━━[ Script By TARAP KUHING ]━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "━━━━━━━━━━━━━━━━━━[ Script By FARUK BROWSER ]━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
@@ -341,7 +341,7 @@ echo "   - VPS settings" | tee -a log-install.txt
 echo "   - Admin Control" | tee -a log-install.txt
 echo "   - Backup & Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
-echo "━━━━━━━━━━━━━━━━━━[ Script By TARAP KUHING ]━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "━━━━━━━━━━━━━━━━━━[ Script By FARUK BROWSER ]━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
@@ -353,9 +353,9 @@ rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
 rm /root/slowdns.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
-echo -e "                 ${tyblue}┌────────────────────────────────────────────┐${NC}"
-echo -e "                 ${tyblue}|Install Script VPS By TARAP KUHING SELESAI..|${NC}"
-echo -e "                 ${tyblue}└────────────────────────────────────────────┘${NC}"
+echo -e "                ${tyblue}┌────────────────────────────────────────────┐${NC}"
+echo -e "                ${tyblue}|Install 24clanSSH Script Finished By FarukBrowser..|${NC}"
+echo -e "                ${tyblue}└────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 3
 echo -e "                                      ${tyblue}R${NC}"

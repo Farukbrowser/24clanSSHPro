@@ -374,7 +374,7 @@ WantedBy=multi-user.target
 EOF
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
-Description=TARAP-KUHING
+Description=FARUK-BROWSER
 After=network.target
 
 [Service]
