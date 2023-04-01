@@ -12,7 +12,7 @@ WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/main/Farukbrowser > /root/tmp
+    curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Farukbrowser > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -77,14 +77,14 @@ date=$(date +"%Y-%m-%d")
 clear
 email=$(cat /home/email)
 if [[ "$email" = "" ]]; then
-echo "Masukkan Email Untuk Menerima Backup"
+echo "Enter Email to Receive Backup"
 read -rp "Email : " -e email
 cat <<EOF>>/home/email
 $email
 EOF
 fi
 clear
-echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
+echo "Please wait, the backup process is ongoing!!"
 rm -rf /root/backup
 mkdir /root/backup
 cp -r /root/.acme.sh /root/backup/ &> /dev/null
@@ -95,6 +95,7 @@ cp -r /etc/gshadow /root/backup/ &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /usr/local/etc/xray /root/backup/xray &> /dev/null
 cp -r /root/nsdomain backup/nsdomain
 cp -r /etc/slowdns backup/slowdns
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
@@ -112,7 +113,7 @@ Detail Backup
 ==================================
 IP VPS        : $IP
 Link Backup   : $link
-Tanggal       : $date
+Date       : $date
 ==================================
 " | mail -s "Backup Data" $email
 rm -rf /root/backup
@@ -123,8 +124,7 @@ Detail Backup
 ==================================
 IP VPS        : $IP
 Link Backup   : $link
-Tanggal       : $date
+Date       : $date
 ==================================
 "
-echo "Silahkan cek Kotak Masuk $email"
-
+echo "Please check the inbox $email"

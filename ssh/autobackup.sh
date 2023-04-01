@@ -15,9 +15,9 @@ CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
     Exp1=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSCRIPT STATUS ENABLE...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mYOUR SCRIPT EXPIRED!\e[0m";
 
     exit 0
 fi
@@ -114,10 +114,10 @@ start
 fi
 email=$(cat /home/email)
 echo -e "
-Ini adalah isi email percobaaan kirim email dari vps
+This is the contents of the email trying to send an email from the vps
 IP VPS : $IP
-Tanggal : $date
-" | mail -s "Percobaan Pengiriman Email" $email
+Date : $date
+" | mail -s "Email Sending Test" $email
 }
 clear
 echo -e "=============================="
@@ -125,9 +125,9 @@ echo -e "     Autobackup Data $sts     "
 echo -e "=============================="
 echo -e "1. Start Autobackup"
 echo -e "2. Stop Autobackup"
-echo -e "3. Ganti Email Penerima"
-echo -e "4. Ganti Email Pengirim"
-echo -e "5. Test kirim Email"
+echo -e "3. Change Recipient Email"
+echo -e "4. Change Sender Email"
+echo -e "5. Test send Email"
 echo -e "=============================="
 read -rp "Please Enter The Correct Number : " -e num
 case $num in

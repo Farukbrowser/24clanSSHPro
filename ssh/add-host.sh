@@ -71,12 +71,12 @@ exit 0
 fi
 clear
 echo -e " $COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• TERIMA KASIH SUDAH •          ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• MENGGUNAKAN SCRIPT •          ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• PREMIUM DARI SAYA  •          ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• KALAU ADA KENDALA  •          ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• CHAT SAYA LEWAT WA •          ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 ${NC} ${COLBG1}        ${WH}• https:/wa.me/085754292950 •      ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• THANKS FOR •          ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• USING SCRIPT •          ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• PREMIUM FROM ME  •          ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• IF THERE ARE PROBLEMS  •          ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}           ${WH}• CHAT ME ON TELEGRAM •          ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}        ${WH}• https:/t.me/farukbrowser •      ${NC} $COLOR1 $NC"
 echo -e " $COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌─────────────────────────────────────────────────┐${NC}"
 read -rp "  New Host/domain : " -e dns
@@ -89,11 +89,13 @@ read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 else
 echo "IP=$dns" > /var/lib/ipvps.conf
+echo "$dns" > /etc/xray/domain
+echo "$dns" > /etc/v2ray/domain
 echo ""
 echo "  [INFO] Dont forget to renew cert"
 echo ""
 echo -e " $COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
-read -n 1 -s -r -p "  Press any key to Renew Cret"
+read -n 1 -s -r -p "  Press any key to Renew Certv2ray"
 certv2ray
 fi

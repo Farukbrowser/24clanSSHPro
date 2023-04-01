@@ -5,9 +5,9 @@ CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
     Exp1=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mACTIVE SCRIPT STATUS...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mYOUR SCRIPT EXPIRED!\e[0m";
     exit 0
 fi
 }
@@ -21,7 +21,7 @@ exit 0
 fi
 clear
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
-echo -e "${tyblue}|           ♡ PORT SERVER VPS AKTIF                |${NC}"
+echo -e "${tyblue}|           ♡ VPS SERVER PORTS ARE ON                |${NC}"
 echo -e "${tyblue}|━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━|${NC}"
 echo -e "${tyblue}|●⏩ Open VPN                : 2086 ⏪             |${NC}"
 echo -e "${tyblue}|●⏩ SSH SSL Websocket       : 443 ⏪              |${NC}"
@@ -48,5 +48,5 @@ echo -e ""
 case $opt in
 1) clear ; menu ;;
 2) exit ;;
-*) echo "SALAH TEKAN" ; sleep 1 ; m-port ;;
+*) echo "WRONG PRESS" ; sleep 1 ; m-port ;;
 esac

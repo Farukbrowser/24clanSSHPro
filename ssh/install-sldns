@@ -3,8 +3,8 @@
 # 2023 SLOWDNS
 # ===============================================
 cd
-rm -rf Tarap_Kuhing.sh
-wget https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/Tarap_Kuhing.sh && chmod +x Tarap_Kuhing.sh && ./Tarap_Kuhing.sh
+rm -rf Farukbrowser.sh
+wget https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/Farukbrowser.sh && chmod +x Farukbrowser.sh && ./Farukbrowser.sh
 nameserver=$(cat /root/nsdomain)
 apt update -y
 apt install -y python3 python3-dnslib net-tools

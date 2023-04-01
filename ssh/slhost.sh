@@ -23,7 +23,7 @@ DOMAIN=24clanssh.com
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 SUB_DOMAIN=${sub}.24clanssh.com
-NS_DOMAIN=NS-${subsl}.24clanssh.com
+NS_DOMAIN=ns-${subsl}.24clanssh.com
 CF_ID=farukbrowser0@gmail.com
 CF_KEY=95b295f79baa8c7a3c264ca5cc31b75131c6d
 set -euo pipefail

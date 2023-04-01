@@ -5,10 +5,10 @@ CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
     Exp1=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mACTIVE SCRIPT STATUS.....\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
-    echo -e "\e[31mRenew IP Anda Chat Saya okay? WA: 0857542292950 #\e[0m"
+    echo -e "\e[31mYOUR SCRIPT EXPIRED!\e[0m";
+    echo -e "\e[31mRenew your IP Chat me okay? WhatsApp: +2348084124966 #\e[0m"
     exit 0
 fi
 }
@@ -18,7 +18,7 @@ echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
 else
 echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mDaftarkan IP Chat Saya okay? WA: 085754292950, Kalau Sudah daftar Tinggal Menikmati Hasil ya hehe... #\e[0m"
+echo -e "\e[31mRenew your IP Chat me okay? WhatsApp: +2348084124966 #, If you have registered, you just have to enjoy the results, hehe...... #\e[0m"
 exit 0
 fi
 clear
@@ -35,13 +35,13 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\e[0;100;33m       • AUTO-REBOOT MENU BY FARUK BROWSER •        \e[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e "[\e[36m•1\e[0m] Set Auto-Reboot Setiap 1 Jam"
-echo -e "[\e[36m•2\e[0m] Set Auto-Reboot Setiap 6 Jam"
-echo -e "[\e[36m•3\e[0m] Set Auto-Reboot Setiap 12 Jam"
-echo -e "[\e[36m•4\e[0m] Set Auto-Reboot Setiap 1 Hari"
-echo -e "[\e[36m•5\e[0m] Set Auto-Reboot Setiap 1 Minggu"
-echo -e "[\e[36m•6\e[0m] Set Auto-Reboot Setiap 1 Bulan"
-echo -e "[\e[36m•7\e[0m] Matikan Auto-Reboot"
+echo -e "[\e[36m•1\e[0m] Set Auto-Reboot Every 1 Hour"
+echo -e "[\e[36m•2\e[0m] Set Auto-Reboot Every 6 Hour"
+echo -e "[\e[36m•3\e[0m] Set Auto-Reboot Every 12 Hours"
+echo -e "[\e[36m•4\e[0m] Set Auto-Reboot Every 1 Day"
+echo -e "[\e[36m•5\e[0m] Set Auto-Reboot Every 1 Week"
+echo -e "[\e[36m•6\e[0m] Set Auto-Reboot Every 1 Month"
+echo -e "[\e[36m•7\e[0m] Turn off Auto-Reboot"
 echo -e "[\e[36m•8\e[0m] View reboot log"
 echo -e "[\e[36m•9\e[0m] Remove reboot log"
 echo -e ""

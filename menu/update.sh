@@ -60,7 +60,7 @@ wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/Farukbrowser/24cla
 wget -q -O /usr/bin/cek-ssws "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/cek-ssws.sh" && chmod +x /usr/bin/cek-ssws
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/certv2ray.sh" && chmod +x /usr/bin/certv2ray
 wget -q -O /usr/bin/m-update "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
-wget -q -O /usr/bin/slowdns "https://raw.githubusercontent.com/Farukbrowser/Slowdns/main/slowdns" && chmod +x /usr/bin/slowdns
+wget -q -O /usr/bin/user "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/user.sh" && chmod +x /usr/bin/user
 wget -q -O /usr/bin/backup2 "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/backup2.sh" && chmod +x /usr/bin/backup2
 wget -q -O /usr/bin/restore2 "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/restore2.sh" && chmod +x /usr/bin/restore2
 echo -e " [INFO] Dwonload File Successfully"

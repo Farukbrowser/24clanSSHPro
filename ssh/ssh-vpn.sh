@@ -311,13 +311,13 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
-# Ganti Banner
+# Change Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/issue.net"
 
-#install bbr dan optimasi kernel
+#Install Bbr and Kernel Optimization
 #wget https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
-# blokir torrent
+# Block torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -357,7 +357,7 @@ wget -O member "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main
 wget -O delete "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/delete.sh"
 wget -O autokill "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/autokill.sh"
 wget -O ceklim "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/ceklim.sh"
-wget -O portovpn "https://raw.githubusercontent.com/Farukbrowser/scriptvps/main/ssh/portovpn.sh"
+wget -O portovpn "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portovpn.sh"
 wget -O tendang "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/tendang.sh"
 wget -O insshws "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/sshws/insshws.sh"
 wget -O issue "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/issue.net"
@@ -366,7 +366,7 @@ wget -O webmin "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main
 wget -O m-system "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/m-system.sh"
 wget -O add-host "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/add-host.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/certv2ray.sh"
-wget -O path "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/path.sh"
+#wget -O path "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/path.sh"
 wget -O m-update "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/m-update.sh"
 wget -O m-theme "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/m-theme.sh"
 wget -O speedtest "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/speedtest_cli.py"
@@ -414,7 +414,7 @@ chmod +x m-system
 #chmod +x m-domain
 chmod +x add-host
 chmod +x certv2ray
-chmod +x path
+#chmod +x path
 chmod +x m-update
 chmod +x m-theme
 chmod +x speedtest

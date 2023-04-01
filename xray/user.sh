@@ -76,49 +76,35 @@ domain=`cat /etc/xray/domain`
 else
 domain=`cat /etc/v2ray/domain`
 fi
-
 tls="$(cat ~/log-install.txt | grep -w "Vmess WS TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess WS none TLS" | cut -d: -f2|sed 's/ //g')"
-until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/etc/xray/config.json")
+	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
+		clear
+		echo ""
+		echo "You have no existing clients!"
+		exit 1
+	fi
 
-		read -rp "User: " -e user
-		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
-
-		if [[ ${CLIENT_EXISTS} == '1' ]]; then
-clear
-            echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-            echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
-            echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-            echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-            echo ""
-            echo -e " A client with the specified name was already created, please choose another name."
-            echo ""
-            echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-            read -n 1 -s -r -p "Press any key to back on menu"
-v2ray-menu
+	clear
+	echo ""
+	echo "SHOW USER XRAY VMESS WS"
+	echo "Select the existing client you want to renew"
+	echo " Press CTRL+C to return"
+	echo -e "==============================="
+	grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
+	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
+		if [[ ${CLIENT_NUMBER} == '1' ]]; then
+			read -rp "Select one client [1]: " CLIENT_NUMBER
+		else
+			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
-#read -p "   Bug Host : " address
-read -p "   Bug SNI/Host : " sni
+export user=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+export harini=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
+export exp=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+export uuid=$(grep -E "^#vms " "/usr/local/etc/xray/$user-tls.json" | cut -d ' ' -f 5 | sed -n "${CLIENT_NUMBER}"p)
 
-#bug_addr=${address}.
-#bug_addr2=$address
-#if [[ $address == "" ]]; then
-#bug.com=$bug_addr2
-#else
-#bug.com=$bug_addr
-
-uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Expired (days): " masaaktif
-export exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#vmess$/a\#vms '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-export exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#vmessgrpc$/a\#grpc '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 cat>/usr/local/etc/xray/$user-tls.json<<-END
       {
       "v": "2",
@@ -170,8 +156,6 @@ export vmess_base643=$( base64 -w 0 <<< $vmess_json3)
 export vmesslink1="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-tls.json)"
 export vmesslink2="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-none.json)"
 export vmesslink3="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-grpc.json)"
-systemctl restart xray > /dev/null 2>&1
-service cron restart > /dev/null 2>&1
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• CREATE VMESS USER •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
@@ -209,5 +193,4 @@ echo -e "$COLOR1 ${NC}                ${WH}• BY FARUK BROWSER •${NC}        
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
-
 menu
