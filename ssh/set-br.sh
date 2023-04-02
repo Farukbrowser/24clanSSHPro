@@ -35,7 +35,7 @@ port 587
 auth on
 user farukktn@gmail.com
 from farukktn@gmail.com
-password houaqlmgmqvjdxnb
+password cqtrnfqudtipqasf
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc

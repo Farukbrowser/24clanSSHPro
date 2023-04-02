@@ -68,7 +68,7 @@ https://api.whatsapp.com/send/?phone=+2348084124966&text&type=phone_number&app_a
 <br>
 ⏩ Open VPN                : 2086 ⏪ <br>
 ⏩ SSH SSL Websocket       : 443 ⏪<br>
-⏩ SSH Websocket           : [ 80, 8080 ] ⏪<br>
+⏩ SSH Websocket           : [ 80,8080,2082 ] ⏪<br>
 ⏩ Stunnel                 : 8443,8880 ⏪<br>
 ⏩ Vmess WS TLS            : 443 ⏪<br>
 ⏩ Vless WS TLS            : 443 ⏪<br>
@@ -110,11 +110,4 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
   <a><img src="https://img.shields.io/badge/Created_By%20©-Farukbrowser%20AutoScriptVPN%202023.%20All%20rights%20reserved...-blueviolet.svg" style="max-width:200%;">
     </p>
    </p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>

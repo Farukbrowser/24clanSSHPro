@@ -93,69 +93,22 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vms " "/etc/xray/config.json")
 	echo " Press CTRL+C to return"
 	echo -e "==============================="
 	grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
-	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
-		if [[ ${CLIENT_NUMBER} == '1' ]]; then
-			read -rp "Select one client [1]: " CLIENT_NUMBER
-		else
-			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
-		fi
-	done
-export user=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
-export harini=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
-export exp=$(grep -E "^#vms " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
-export uuid=$(grep -E "^#vms " "/usr/local/etc/xray/$user-tls.json" | cut -d ' ' -f 5 | sed -n "${CLIENT_NUMBER}"p)
+echo ""
+echo ""
+			read -rp "Masukan Name User : " user
 
-cat>/usr/local/etc/xray/$user-tls.json<<-END
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vmess",
-      "type": "none",
-      "host": "${sni}",
-      "tls": "tls"
-}
-END
-cat>/usr/local/etc/xray/$user-none.json<<-END
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vmess",
-      "type": "none",
-      "host": "${sni}",
-      "tls": "none"
-}
-END
-cat > /usr/local/etc/xray/$user-grpc.json<<-END
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "grpc",
-      "path": "vmess-grpc",
-      "type": "none",
-      "host": "",
-      "tls": "tls"
-}
-END
+uuid=`cat /etc/xray/$user/$user-uuid`
+exp=`cat /etc/xray/$user/$user-exp`
+tarap=`cat /etc/xray/$user/$user-tls.json`
+kuhing=`cat /etc/xray/$user/$user-none.json`
+madu=`cat /etc/xray/$user/$user-grpc.json`
+
 export vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 export vmess_base642=$( base64 -w 0 <<< $vmess_json2)
 export vmess_base643=$( base64 -w 0 <<< $vmess_json3)
-export vmesslink1="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-tls.json)"
-export vmesslink2="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-none.json)"
-export vmesslink3="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-grpc.json)"
+export vmesslink1="vmess://$(echo $tarap | base64 -w 0)"
+export vmesslink2="vmess://$(echo $kuhing | base64 -w 0)"
+export vmesslink3="vmess://$(echo $madu | base64 -w 0)"
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• CREATE VMESS USER •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log

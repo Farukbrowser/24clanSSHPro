@@ -110,8 +110,9 @@ read -p "   Bug SNI/Host : " sni
 #bug.com=$bug_addr2
 #else
 #bug.com=$bug_addr
-
-uuid=$(cat /proc/sys/kernel/random/uuid)
+mkdir -p /etc/xray/$user
+touch /etc/xray/$user
+export uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 export exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vms '"$user $exp"'\
@@ -119,7 +120,54 @@ sed -i '/#vmess$/a\#vms '"$user $exp"'\
 export exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\#grpc '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-cat>/usr/local/etc/xray/$user-tls.json<<-END
+echo "$uuid" > /etc/xray/$user/uuid
+echo "$exp" > /etc/xray/$user/exp
+cat> /etc/xray/$user/$user-tls.json<<END
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "443",
+      "id": "$uuid",
+      "aid": "0",
+      "net": "ws",
+      "path": "/vmess",
+      "type": "none",
+      "host": "${sni}",
+      "tls": "tls"
+}
+END
+cat> /etc/xray/$user/$user-none.json<<END
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "80",
+      "id": "$uuid",
+      "aid": "0",
+      "net": "ws",
+      "path": "/vmess",
+      "type": "none",
+      "host": "${sni}",
+      "tls": "none"
+}
+END
+cat> /etc/xray/$user/$user-grpc.json<<END
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "443",
+      "id": "$uuid",
+      "aid": "0",
+      "net": "grpc",
+      "path": "vmess-grpc",
+      "type": "none",
+      "host": "",
+      "tls": "tls"
+}
+END
+tarap=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -133,8 +181,8 @@ cat>/usr/local/etc/xray/$user-tls.json<<-END
       "host": "${sni}",
       "tls": "tls"
 }
-END
-cat>/usr/local/etc/xray/$user-none.json<<-END
+EOF`
+kuhing=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -148,8 +196,8 @@ cat>/usr/local/etc/xray/$user-none.json<<-END
       "host": "${sni}",
       "tls": "none"
 }
-END
-cat > /usr/local/etc/xray/$user-grpc.json<<-END
+EOF`
+madu=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
@@ -163,13 +211,13 @@ cat > /usr/local/etc/xray/$user-grpc.json<<-END
       "host": "",
       "tls": "tls"
 }
-END
+EOF`
 export vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 export vmess_base642=$( base64 -w 0 <<< $vmess_json2)
 export vmess_base643=$( base64 -w 0 <<< $vmess_json3)
-export vmesslink1="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-tls.json)"
-export vmesslink2="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-none.json)"
-export vmesslink3="vmess://$(base64 -w 0 /usr/local/etc/xray/$user-grpc.json)"
+export vmesslink1="vmess://$(echo $tarap | base64 -w 0)"
+export vmesslink2="vmess://$(echo $kuhing | base64 -w 0)"
+export vmesslink3="vmess://$(echo $madu | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear

@@ -91,6 +91,7 @@ case $opt in
 3) clear ; renew-vless ; exit ;;
 4) clear ; del-vless ; exit ;;
 5) clear ; cek-vless ; exit ;;
+6) clear ; uservless ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "salah tekan " ; sleep 1 ; m-vless ;;

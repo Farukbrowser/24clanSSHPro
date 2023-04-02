@@ -85,7 +85,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Trojan Account •     
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
 		read -rp "User: " -e user
-		user_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
+		user_EXISTS=$(grep -w $user /usr/local/etc/xray/config.json | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then
 clear
@@ -113,10 +113,10 @@ read -p "   Bug SNI/Host : " sni
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#trojanws$/a\#! '"$user $exp"'\
-},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
-},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#trojanws$/a\#tr '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
+sed -i '/#trojangrpc$/a\#tr '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 
 trojanlink1="trojan://${uuid}@${domain}:${tls}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=$sni#${user}"
 trojanlink="trojan://${uuid}@${domain}:${tls}?path=%2Ftrojan-ws&security=tls&host=$sni&type=ws&sni=$sni#${user}"
