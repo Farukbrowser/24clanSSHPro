@@ -5,9 +5,9 @@ CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
     Exp1=$(curl -sS https://raw.githubusercontent.com/Farukbrowser/Profile/main/Profile/permission/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT ACTIVATED...\e[0m"
+    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT WAS EXPIRED!\e[0m";
+    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
 
     exit 0
 fi
@@ -93,7 +93,7 @@ rm -rf backup2
 rm -rf autobackup
 rm -rf user
 rm -rf uservless
-#rm -rf ins-xray
+rm -rf ins-xray
 
 # download menu
 cd /usr/bin
@@ -155,7 +155,7 @@ rm -rf backup2
 rm -rf autobackup
 rm -rf user
 rm -rf uservless
-#rm -rf ins-xray
+rm -rf ins-xray
 
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/menu.sh" && chmod +x /usr/bin/menu
 wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
@@ -217,7 +217,7 @@ wget -O /usr/bin/ws-dropbear "https://raw.githubusercontent.com/Farukbrowser/24c
 wget -O /usr/bin/autobackup "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/ssh/autobackup.sh" && chmod +x /usr/bin/autobackup
 wget -O /usr/bin/user "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/user.sh" && chmod +x /usr/bin/user
 wget -O /usr/bin/uservless "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/uservless.sh" && chmod +x /usr/bin/uservless
-#wget -O /usr/bin/ins-xray "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/ins-xray.sh" && chmod +x /usr/bin/ins-xray
+wget -O /usr/bin/ins-xray "https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/xray/ins-xray.sh" && chmod +x /usr/bin/ins-xray
 
 chmod +x menu
 chmod +x m-vmess
@@ -278,7 +278,7 @@ chmod +x restore2
 chmod +x autobackup
 chmod +x user
 chmod +x uservless
-#chmod +x ins-xray
+chmod +x ins-xray
 sleep 5
 
 clear
