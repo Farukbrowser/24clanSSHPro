@@ -130,7 +130,7 @@ cat > /etc/xray/config.json << END
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmess"
+                "path": "/v2ray"
           }
         }
      },
@@ -374,7 +374,7 @@ WantedBy=multi-user.target
 EOF
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
-Description=FARUKBROWSER
+Description=FARUK-BROWSER
 After=network.target
 
 [Service]
@@ -392,9 +392,9 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 8080;
+			 listen 8080;
              listen [::]:8080;
-			 listen 2082;
+             listen 2082;
              listen [::]:2082;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;
