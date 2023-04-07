@@ -112,7 +112,8 @@ read -p "   Bug SNI/Host : " sni
 #bug.com=$bug_addr
 mkdir -p /etc/xray/$user
 touch /etc/xray/$user
-export uuid=$(cat /proc/sys/kernel/random/uuid)
+#export uuid=$(cat /proc/sys/kernel/random/uuid)
+read -p "   Masukan uuid : " uuid
 read -p "Expired (days): " masaaktif
 export exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vms '"$user $exp"'\
