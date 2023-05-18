@@ -1,6 +1,6 @@
 #!/bin/bash
 # Proxy For Edukasi & Imclass
-# Mod By FARUK BROWSER
+# Mod By Farukbrowser
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -12,22 +12,6 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-# Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Farukbrowser/perizinan/main/ipvps.txt | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : "
-echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
-exit 0
-fi
-# Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Farukbrowser/scriptvps/main/sshws"
 
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Farukbrowser/24clanSSHPro/main/sshws/ws-dropbear
 chmod +x /usr/local/bin/ws-dropbear
@@ -35,7 +19,7 @@ chmod +x /usr/local/bin/ws-dropbear
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By FARUK BROWSER
+Description=Python Proxy Mod By Faruk Browser
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
@@ -63,8 +47,8 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By FARUK BROWSER
-Documentation=https://t.me/Hendra2012
+Description=Python Proxy Mod By Farukbrowser
+Documentation=https://t.me/fbrowser
 After=network.target nss-lookup.target
 
 [Service]
@@ -90,7 +74,7 @@ chmod +x /usr/local/bin/ws-stunnel
 # Installing Service
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
-Description=Python Proxy Mod By FARUK BROWSER
+Description=Python Proxy Mod By TARAP KUHING
 Documentation=https://t.me/Hendra2012
 After=network.target nss-lookup.target
 
